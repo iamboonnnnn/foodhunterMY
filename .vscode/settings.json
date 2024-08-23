@@ -1,6 +1,0 @@
-{
-    "liveServer.settings.port": 5501,
-    "livePreview.defaultPreviewPath": "/index.html",
-    "appService.defaultWebAppToDeploy": "/subscriptions/67cbe83c-4ff3-4544-ae3f-22e98c6742a0/resourceGroups/UCCD2323-Front-End-Web-Development/providers/Microsoft.Web/sites/FoodHunterInMalaysia",
-    "appService.deploySubpath": "."
-}
