@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Food: Kedah</title>
+    <link rel="icon" type="image/icon" href="/assets/images/icon.png">
+
+    <!-- Custom CSS and JS -->
+    <link rel="stylesheet" href="/assets/css/header-footer.css">
+    <script src="/assets/js/header-footer.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/stateCK.css">
+    <script src="/assets/js/stateCK.js" defer></script>
+
+    <!-- Bootstrap CSS for modal -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>    
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+        <p>This website uses cookies to enhance your experience</p>
+        <p>By continuing to visit this site, you agree to our use of cookies.</p>
+        <button id="acceptCookies">Got it!</button>
+    </div>
+
+    <header>
+        <br>
+        <nav id="navbar" class="navbar">
+            <div class="nav-item">
+                <img src="/assets/images/logo.png" alt="Logo" class="logo">
+                <button class="menu-text" id="menu-text">
+                    MENU
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="/index.html#">HOME</a></li>
+                    <li><a href="/index.html#states">MALAYSIA STATES</a></li>
+                    <li><a href="/index.html#team">ABOUT US</a></li>
+                    <li><a href="/maps.html"><i class="fa-regular fa-map"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="main">
+        <section id="hero" class="hero">
+            <img id="heroImage" src="/assets/images/states/Kedah.jpg" alt="Kedah Hero Image">
+            <div class="hero-overlay">
+                <span class="hero-text">Kedah</span>
+            </div>
+        </section>
+
+        <section id="food-section">
+            <h2>Discover Kedah's Delicacies</h2>
+            <div class="food-buttons">
+                <img src="/assets/images/states-food/kedah/pekasam.jpg" alt="Pekasam" class="food-image" title="Pekasam" data-title="Pekasam"
+                    data-id="food1Clicked"
+                    data-description="A traditional Malaysian delicacy from Kedah, made with fermented fish. The fish is marinated in rice flour and salt, then fermented to develop a unique, tangy flavor. Typically enjoyed fried or as a side dish with rice, pekasam offers a distinctive, savory taste that reflects Malaysia's rich culinary heritage."
+                    data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1015865.8451801186!2d99.9202436537712!3d5.963582191404143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b3348c0dbabcb%3A0x358fab58f4dc1408!2sIkan%20Pekasam%20Tok%20Piah%20Jeniang!5e0!3m2!1szh-CN!2smy!4v1724063250754!5m2!1szh-CN!2smy">
+                <img src="/assets/images/states-food/kedah/gulai-ikan-temenung.jpg" alt="Gulai Ikan Temenung" class="food-image" title="Gulai Ikan Temenung" data-title="Gulai Ikan Temenung"
+                    data-id="food2Clicked"
+                    data-description="A flavorful Malaysian curry made with temenung fish (also known as sardine or mackerel). This dish features a rich, spicy coconut-based gravy infused with a blend of aromatic spices such as turmeric, ginger, and chili. The fish is simmered in the curry sauce until tender, creating a delicious and comforting meal that's commonly enjoyed with steamed rice."
+                    data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2031179.6086319138!2d97.84876055625001!3d6.110811500000017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b42ec1f1c28fd%3A0xcaa732dd1d20a2c1!2sKak%20Yang%20Gulai%20Temenung!5e0!3m2!1szh-CN!2smy!4v1724063646258!5m2!1szh-CN!2smy">
+                <img src="/assets/images/states-food/kedah/nasi-ulam.jpg" alt="Nasi Ulam" class="food-image"
+                    title="Nasi Ulam" data-title="Nasi Ulam" data-id="food3Clicked"
+                    data-description="A traditional Malaysian herb rice dish, popular in Kedah. It features steamed rice mixed with a variety of fresh herbs and spices, creating a fragrant and flavorful meal. Often accompanied by fish or other proteins, Nasi Ulam is known for its vibrant taste and aromatic blend of local ingredients."
+                    data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.041184257793!2d100.4662447749863!3d5.707189994274695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b28ce4567556f%3A0xa05797c39c5f4ae0!2sRestoran%20Ulam%20Pegaga!5e0!3m2!1szh-CN!2smy!4v1724063561563!5m2!1szh-CN!2smy">
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="foodModal" tabindex="-1" role="dialog" aria-labelledby="foodModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog custom-modal-width" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="foodModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="foodModalImage" src="" alt="Food Image" style="width: 100%; height: auto;">
+                    <p id="foodModalDescription"></p>
+                    <!-- Embedded Map -->
+                    <div id="embedMapContainer" style="margin-top: 20px; width: 100%;">
+                        <!-- Google Map Embed will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="design-rating" class="rating-section">
+        <h3>Rate Website Design</h3>
+        <div class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p id="rating-message"></p>
+    </div>
+    
+    <!-- Subscribe to Mailing List Section -->
+    <div class="subscribe-section">
+        <h3>Subscribe to our Mailing List!</h3>
+        <form id="subscribeForm">
+            <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-column">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="/index.html#">Main Page</a></li>
+                <li><a href="/index.html#states">Malaysia States</a></li>
+                <li><a href="/index.html#team">About Us</a></li>
+                <li><a href="/maps.html">Interaction maps</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Our Partner</h3>
+            <ul>
+                <li><a href="https://www.malaysia.travel/">Malaysia Travel</a></li>
+                <li><a href="https://www.tourism.gov.my/">Tourism Malaysia</a></li>
+                <li><a href="https://www.cuticuti-malaysia.com/">Cuti-Cuti Malaysia</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p><b>&copy; 2024 Explore Food in Malaysia. All Rights Reserved.</b></p>
+    </div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+</body>
+
+</html>

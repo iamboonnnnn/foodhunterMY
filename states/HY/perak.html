@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Food: Perak</title>
+    <link rel="icon" type="image/icon" href="/assets/images/icon.png">
+    <!-- Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom CSS and JS -->
+    <link rel="stylesheet" href="/assets/css/header-footer.css">
+    <script src="/assets/js/header-footer.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #F8EDE3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            margin-bottom: 30px;
+        }
+
+        .carousel-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .food-selection {
+            background-image: url('/assets/images/states-food/perak/tembikar.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+
+        .food-item {
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #9a9292;
+            background-color: #cfbd95;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+            margin: 10px 0;
+            width: 80%;
+            flex: 1;
+        }
+
+        .food-item img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .food-item:hover {
+            transform: scale(1.05);
+        }
+
+        .food-item p {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+            padding-top: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-section {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: none;
+        }
+
+        .info-section h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-section p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .tau-fufa {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .tau-fufa img {
+            max-width: 40%;
+            border-radius: 10px;
+        }
+
+        .nasi-ganja {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .nasi-ganja img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .kopi {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .kopi img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .kopi img:first-child {
+            max-width: 30%;
+        }
+
+        .kopi img:last-child {
+            max-width: 60%;
+        }
+
+        @media (max-width: 768px) {
+            .food-item {
+                margin: 5px;
+            }
+
+            .food-item p {
+                font-size: 20px;
+            }
+
+            .tau-fufa,
+            .nasi-ganja,
+            .kopi {
+                flex-direction: column;
+            }
+
+            .kopi img:first-child,
+            .kopi img:last-child {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .food-item {
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .food-item p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+        <p>This website uses cookies to enhance your experience</p>
+        <p>By continuing to visit this site, you agree to our use of cookies.</p>
+        <button id="acceptCookies">Got it!</button>
+    </div>
+    
+        <header>
+            <br>
+            <nav id="navbar" class="navbar">
+                <div class="nav-item">
+                    <img src="/assets/images/logo.png" alt="Logo" class="logo">
+                    <button class="menu-text" id="menu-text">
+                        MENU
+                    </button>
+    
+                    <ul class="nav-links">
+                        <li><a href="/index.html#">HOME</a></li>
+                        <li><a href="/index.html#states">MALAYSIA STATES</a></li>
+                        <li><a href="/index.html#team">ABOUT US</a></li>
+                        <li><a href="/maps.html"><i class="fa-regular fa-map"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+    <section class="image-slideshow">
+        <div class="carousel-container">
+            <!-- Part 1: Image Carousel Display -->
+            <div id="stateCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/assets/images/states-hero-slideshow/Perak/perak_1.jpg" alt="First Image"
+                            class="d-block w-100">
+                        <div class="carousel-caption">
+                            <h1>THE TASTE OF PERAK</h1>
+                            <p>A palce full of history.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/states-hero-slideshow/Perak/perak_2.jpg" alt="Second Image"
+                            class="d-block w-100">
+                        <div class="carousel-caption">
+                            <h1>THE BEST</h1>
+                            <p>A place where food is everywhere.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/states-hero-slideshow/Perak/perak_3.jpg" alt="Third Image"
+                            class="d-block w-100">
+                        <div class="carousel-caption">
+                            <h1>The MOST TRADITIONAL</h1>
+                            <p>Tradisional Food and Culture.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#stateCarousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#stateCarousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: Food Selection -->
+    <section class="food-selection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('tau_fufa')">
+                        <img src="/assets/images/states-food/perak/taufufa.jpg" alt="taufufa">
+                        <p>Tau Fufa</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('nasi_ganja')">
+                        <img src="/assets/images/states-food/perak/ganja.jpg" alt="Nasi Ganja">
+                        <p>Nasi Ganja</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('kopi')">
+                        <img src="/assets/images/states-food/perak/kopi.jpg" alt="Kopi">
+                        <p>Kopi</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Info Section -->
+            <div id="foodInfo" class="info-section">
+                <h2 id="foodName"></h2>
+                <div id="foodContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showFoodInfo(food) {
+            var foodName = document.getElementById('foodName');
+            var foodContent = document.getElementById('foodContent');
+            var foodInfoSection = document.getElementById('foodInfo');
+
+            var foodData = {
+                tau_fufa: {
+                    name: '- Tau Fufa -',
+                    content: `
+                        <div class="tau-fufa">
+                            <img src="/assets/images/states-food/perak/taufufa_4.jpg" alt="Tau Fufa">
+                            <div>
+                                <p>Tau Fu Fa is a Chinese dessert made with very soft tofu. It is usually served either with a clear sweet syrup alone, with black syrup made from palm sugar, or with a sugar syrup infused with ginger.</p>
+                                <p><strong>Location:woong kee beancurd taufufah ipoh</strong> </p>
+                                <p>Address:No.32-38A(bawah, Jalan Ali Pitchay)  </p>
+                                <p>Contact No: 012-517 7452  </p>
+                                <img src="/assets/images/states-food/perak/taufufa_2.jpg" alt="Tau Fufa 2">
+                                <img src="/assets/images/states-food/perak/taufufa_3.jpg" alt="Tau Fufa 3">
+                            </div>
+                        </div>
+                    `
+                },
+                nasi_ganja: {
+                    name: '- Nasi Ganja -',
+                    content: `
+                        <div class="nasi-ganja">
+                            <img src="/assets/images/states-food/perak/nasi_ganja1.jpg" alt="Nasi Ganja">
+                            <div>
+                                <p>Nasi Ganja is a famous dish from Ipoh, Perak, consisting of rice served with ayam merah (red chicken), sambal, and other side dishes. The dish is so addictive, it’s nicknamed "ganja" (marijuana) for its supposed addictive nature.</p>
+                                <p><strong>Location:Yong Suan Restaurant</strong> </p>
+                                <p>Address: 2, Jalan Yang Kalsom, Ipoh Town, 30250 Ipoh, Perak</p>
+                                <p>Contact No: 016-595 9673  </p>
+                                <img src="/assets/images/states-food/perak/nasi_ganja2.jpg" alt="Nasi Ganja 2">
+                            </div>
+                        </div>
+                    `
+                },
+                kopi: {
+                    name: '- Kopi -',
+                    content: `
+                        <div class="kopi">
+                            <img src="/assets/images/states-food/perak/kopi2.jpg" alt="Kopi">
+                            <div>
+                                <p>Kopi in Malaysia usually refers to a strong, rich coffee served with sweetened condensed milk. It’s popular across the country, particularly in traditional coffee shops known as 'kopitiams'.</p>
+                                <p><strong>Location: Nam Heong Kopitiam</strong> </p>
+                                <p>Address: 2, Jalan Bandar Timah, 30000 Ipoh, Perak</p>
+                                <p>Contact No: 016-595 9673  </p>
+                                <img src="/assets/images/states-food/perak/kopi1.jpg" alt="Kopi 2">
+                            </div>
+                        </div>
+                    `
+                }
+            };
+
+            foodName.innerHTML = foodData[food].name;
+            foodContent.innerHTML = foodData[food].content;
+            foodInfoSection.style.display = 'block';
+
+            foodInfoSection.scrollIntoView({ behavior: 'smooth' })
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Subscribe to Mailing List Section -->
+    <div class="subscribe-section">
+        <h3>Subscribe to our Mailing List!</h3>
+        <form id="subscribeForm">
+            <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-column">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="/index.html#">Main Page</a></li>
+                <li><a href="/index.html#states">Malaysia States</a></li>
+                <li><a href="/index.html#team">About Us</a></li>
+                <li><a href="/maps.html">Interaction maps</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Our Partner</h3>
+            <ul>
+                <li><a href="https://www.malaysia.travel/">Malaysia Travel</a></li>
+                <li><a href="https://www.tourism.gov.my/">Tourism Malaysia</a></li>
+                <li><a href="https://www.cuticuti-malaysia.com/">Cuti-Cuti Malaysia</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p><b>&copy; 2024 Explore Food in Malaysia. All Rights Reserved.</b></p>
+    </div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Food: Pahang</title>
+    <link rel="icon" type="image/icon" href="/assets/images/icon.png">
+    <!-- Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom CSS and JS -->
+    <link rel="stylesheet" href="/assets/css/header-footer.css">
+    <script src="/assets/js/header-footer.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #F8EDE3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            margin-bottom: 30px;
+        }
+
+        .carousel-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .food-selection {
+            background-image: url('/assets/images/states-food/sabah/kk.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+
+        .food-item {
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #0d2637;
+            background-color: #d1e8e9;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+            margin: 10px 0;
+            width: 80%;
+            flex: 1;
+        }
+
+        .food-item img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .food-item:hover {
+            transform: scale(1.05);
+        }
+
+        .food-item p {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+            padding-top: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-section {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: none;
+        }
+
+        .info-section h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-section p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .ngiu-cap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .ngiu-cap img {
+            max-width: 40%;
+            border-radius: 10px;
+        }
+
+        .hinava {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .hinava img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .nanggiu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nanggiu img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .nanggiu img:first-child {
+            max-width: 30%;
+        }
+
+        .nanggiu img:last-child {
+            max-width: 60%;
+        }
+
+        @media (max-width: 768px) {
+            .food-item {
+                margin: 5px;
+            }
+
+            .food-item p {
+                font-size: 20px;
+            }
+
+            .ngiu-cap,
+            .hinava,
+            .nanggiu {
+                flex-direction: column;
+            }
+
+            .nanggiu img:first-child,
+            .nanggiu img:last-child {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .food-item {
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .food-item p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+        <p>This website uses cookies to enhance your experience</p>
+        <p>By continuing to visit this site, you agree to our use of cookies.</p>
+        <button id="acceptCookies">Got it!</button>
+    </div>
+    
+        <header>
+            <br>
+            <nav id="navbar" class="navbar">
+                <div class="nav-item">
+                    <img src="/assets/images/logo.png" alt="Logo" class="logo">
+                    <button class="menu-text" id="menu-text">
+                        MENU
+                    </button>
+    
+                    <ul class="nav-links">
+                        <li><a href="/index.html#">HOME</a></li>
+                        <li><a href="/index.html#states">MALAYSIA STATES</a></li>
+                        <li><a href="/index.html#team">ABOUT US</a></li>
+                        <li><a href="/maps.html"><i class="fa-regular fa-map"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    <section class="image-slideshow">
+        <div class="carousel-container">
+            <!-- Part 1: Image Carousel Display -->
+            <div id="stateCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <video class="d-block w-100" autoplay loop muted>
+                            <source src="/assets/images/states-hero-slideshow/Sabah/sabah_2.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="carousel-caption">
+                            <h1>Visit Sabah</h1>
+                            <p>The moniker Bumi Di Bawah Bayu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: Food Selection -->
+    <section class="food-selection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('ngiu_cap')">
+                        <img src="/assets/images/states-food/sabah/ngiu_cap.jpg" alt="Ngiu Cap">
+                        <p>Ngiu Cap</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('hinava')">
+                        <img src="/assets/images/states-food/sabah/hinava.jpg" alt="Hinava">
+                        <p>Hinava</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('nanggiu')">
+                        <img src="/assets/images/states-food/sabah/nanggiu.jpg" alt="Nanggiu">
+                        <p>Nanggiu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Info Section -->
+            <div id="foodInfo" class="info-section">
+                <h2 id="foodName"></h2>
+                <div id="foodContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showFoodInfo(food) {
+            var foodName = document.getElementById('foodName');
+            var foodContent = document.getElementById('foodContent');
+            var foodInfoSection = document.getElementById('foodInfo');
+
+            var foodData = {
+                ngiu_cap: {
+                    name: '- Ngiu Cap -',
+                    content: `
+                        <div class="ngiu-cap">
+                            <img src="/assets/images/states-food/sabah/ngiu_cap1.jpg" alt="Ngiu Cap">
+                            <div>
+                                <p>Ngiu Cap, also known as beef stew, is a beloved Sabahan dish made with tender beef slow-cooked in a rich, flavorful sauce. It's often served with rice or bread and is a staple in local cuisine.</p>
+                                <p><strong>Location: Yii Siang Hainan Ngiu Chap</strong></p>
+                                <p>Address: 1 Block C, Lorong Perindustrian, 88450 Kota Kinabalu, Sabah</p>
+                                <p>Contact No:016-822 3982</p>
+                                <img src="/assets/images/states-food/sabah/ngiu_cap2.jpg" alt="Ngiu Cap 2">
+                            </div>
+                        </div>
+                    `
+                },
+                hinava: {
+                    name: '- Hinava -',
+                    content: `
+                        <div class="hinava">
+                            <img src="/assets/images/states-food/sabah/hinava1.jpg" alt="Hinava">
+                            <div>
+                                <p>Hinava is a traditional Kadazan-Dusun dish made with raw fish marinated in lime juice, mixed with tomatoes, onions, and chili. It’s a refreshing and tangy dish, perfect as an appetizer.</p>
+                                <p><strong>Location: NK Restaurant & Catering (Halal Food)</strong></p>
+                                <p>Address:Grd Floor, Lot 18, No.3, Karamunsing Godown, Sadong Jaya, 88000 Kota Kinabalu, Sabah</p>
+                                <p>Contact No: 088-217321</p>
+                                <img src="/assets/images/states-food/sabah/hinava2.jpg" alt="Hinava 2">
+                            </div>
+                        </div>
+                    `
+                },
+                nanggiu: {
+                    name: '- Nanggiu -',
+                    content: `
+                        <div class="nanggiu">
+                            <img src="/assets/images/states-food/sabah/nanggiu1.jpg" alt="Nanggiu">
+                            <div>
+                                <p>Nanggiu is a traditional dish consisting of a mix of local herbs and spices, often served with rice and grilled meat. It’s known for its unique and aromatic flavor, representing the essence of Sabah's cuisine.</p>
+                                <p><strong>Location: D' Place Kinabalu</strong></p>
+                                <p>Address: : Lot 2.o1 & 2.02, 2nd floor, Pusat Bandar Kota Kinabalu, 88300 Kota Kinabalu, Sabah, Malaysia</p>
+                                <p>Contact No: 016 833 2381</p>
+                                <div class="nanggiu">
+                                <img src="/assets/images/states-food/sabah/nanggiu2.jpg" alt="Nanggiu">
+                
+                            </div>
+                        </div>
+        `
+                }
+            };
+
+            foodName.innerHTML = foodData[food].name;
+            foodContent.innerHTML = foodData[food].content;
+            foodInfoSection.style.display = 'block';
+
+            foodInfoSection.scrollIntoView({ behavior: 'smooth' })
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Subscribe to Mailing List Section -->
+    <div class="subscribe-section">
+        <h3>Subscribe to our Mailing List!</h3>
+        <form id="subscribeForm">
+            <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-column">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="/index.html#">Main Page</a></li>
+                <li><a href="/index.html#states">Malaysia States</a></li>
+                <li><a href="/index.html#team">About Us</a></li>
+                <li><a href="/maps.html">Interaction maps</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Our Partner</h3>
+            <ul>
+                <li><a href="https://www.malaysia.travel/">Malaysia Travel</a></li>
+                <li><a href="https://www.tourism.gov.my/">Tourism Malaysia</a></li>
+                <li><a href="https://www.cuticuti-malaysia.com/">Cuti-Cuti Malaysia</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p><b>&copy; 2024 Explore Food in Malaysia. All Rights Reserved.</b></p>
+    </div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+</body>
+
+</html>

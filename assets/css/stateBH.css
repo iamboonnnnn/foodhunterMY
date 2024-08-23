@@ -1,0 +1,335 @@
+/* Hero Section */
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item {
+    height: 100vh;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400px;
+    font-style: normal;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Customize carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark background for visibility */
+    border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+/* Adjust carousel pagination */
+.carousel-indicators li {
+    background-color: #fff;
+    /* White bullets */
+}
+
+.carousel-indicators .active {
+    background-color: #F1D3CE;
+    /* Highlight color */
+}
+
+.hero-text {
+    background-color: #F8EDE3;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #D0B8A8;
+    font-size: 128px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Food Section*/
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    /* Space between grid items */
+    padding: 20px;
+    background-color: #F8EDE3;
+}
+
+.food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    /* Ensure no overflow */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    /* Slight hover effect */
+    animation: bounce 0.5s ease infinite alternate;
+}
+
+.food-item img {
+    width: 100%;
+    /* Full width for images */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.food-item img:hover {
+    transform: translateY(-10px);
+
+}
+
+.food-caption {
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8D493A;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(-20px);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+.food-caption {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8D493A;
+    text-align: center;
+}
+
+/* Food Information Styles */
+.food-info-container {
+    background-color: #D0B8A8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+}
+
+.food-info-card {
+    display: flex;
+    flex-direction: row;
+    /* Arrange the items in a row */
+    border: 5px dashed #333;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #F8EDE3;
+    max-width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.food-info-card:hover {
+    background-color: #F1D3CE;
+}
+
+.food-info-card-image-slider {
+    width: 30%;
+    /* Adjust width as per your need */
+    border-right: 5px dashed #333;
+    /* Separating the slideshow from the content */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Position relative for controls */
+}
+
+.food-info-card-image-placeholder {
+    width: 100%;
+    display: none;
+}
+
+.food-info-card-image-placeholder img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    /* Padding inside the image placeholder */
+}
+
+.food-info-card-image-placeholder.active {
+    display: block;
+}
+
+.food-info-card-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1;
+    /* Ensure controls are above the slides */
+}
+
+.food-info-card-controls .prev,
+.food-info-card-controls .next {
+    background-color: #ffffff00;
+    color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    /* Slightly transparent for a smoother look */
+    transition: opacity 0.3s ease;
+    margin: 20px;
+}
+
+.food-info-card-controls .prev:hover,
+.food-info-card-controls .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    opacity: 1;
+}
+
+.food-info-card-content {
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: justify;
+    align-items: flex-start;
+}
+
+.food-info-card-content h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: left;
+}
+
+.food-info-card-content p {
+    margin: 0 0 20px;
+    color: #666;
+}
+
+.food-info-card-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.food-info-card-buttons .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.food-info-card-buttons .btn:hover {
+    background-color: #555;
+}
+
+/* Map */
+.food-info-card-map {
+    width: 30%;
+    /* Adjust width as per your need */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_iframe {
+    height: 100% !important;
+    width: 100%;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .hero-image {
+        height: 50vh;
+    }
+
+    .hero-text {
+        font-size: 48px;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+        /* 1 column layout */
+        grid-template-rows: auto;
+        /* Automatically adjust row height */
+    }
+
+    .food-item {
+        margin-bottom: 20px;
+        /* Spacing between rows */
+        width: 100%;
+        /* Ensure the item takes full width */
+    }
+
+    .food-item img {
+        width: 100%;
+        /* Make sure the image fills the container */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .food-info-card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .food-info-card-image-slider,
+    .food-info-card-map,
+    .food-info-card-content {
+        width: 100%;
+    }
+
+    .food-info-card-image-slider {
+        border-right: none;
+        border-bottom: 5px dashed #333;
+    }
+}

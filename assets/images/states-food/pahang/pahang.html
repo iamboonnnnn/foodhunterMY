@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Culinary: Pahang</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #F8EDE3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            margin-bottom: 30px;
+        }
+
+        .carousel-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .food-selection {
+            background-image: url('batik.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex; 
+            align-items: center;
+            justify-content: center; 
+            flex-direction: column; 
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+
+        .food-item {
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #884e0c;
+            background-color: #ffffff;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+            margin: 10px 0;
+            width: 80%;
+            flex: 1;
+        }
+
+        .food-item img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .food-item:hover {
+            transform: scale(1.05);
+        }
+
+        .food-item p {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+            padding-top: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-section {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: none;
+        }
+
+        .info-section h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-section p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .puding-diraja {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .puding-diraja img {
+            max-width: 40%;
+            border-radius: 10px;
+        }
+
+        .gulai-tempoyak {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .gulai-tempoyak img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .nasi-kebuli {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nasi-kebuli img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .nasi-kebuli img:first-child {
+            max-width: 30%;
+        }
+
+        .nasi-kebuli img:last-child {
+            max-width: 30%;
+        }
+
+        @media (max-width: 768px) {
+            .food-item {
+                margin: 5px;
+            }
+
+            .food-item p {
+                font-size: 20px;
+            }
+
+            .puding-diraja,
+            .gulai-tempoyak,
+            .nasi-kebuli {
+                flex-direction: column;
+            }
+
+            .nasi-kebuli img:first-child,
+            .nasi-kebuli img:last-child {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .food-item {
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .food-item p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="image-slideshow">
+        <div class="carousel-container">
+            <!-- Part 1: Image Carousel Display -->
+            <div id="stateCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="pahang_1.jpg" alt="First Image" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <h1>THE TASTE OF PAHANG</h1>
+                            <p>Land of Natural Beauty</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="pahang_2.jpg" alt="Second Image" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <h1>THE CULTURE</h1>
+                            <p>A Rich Heritage</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="pahang_3.jpg" alt="Third Image" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <h1>A JOURNEY TO REMEMBER</h1>
+                            <p>Experience Pahang's Essence</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#stateCarousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#stateCarousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: Food Selection -->
+    <section class="food-selection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('puding_diraja')">
+                        <img src="puding.webp" alt="Puding DiRaja">
+                        <p>Puding DiRaja</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('gulai_tempoyak')">
+                        <img src="ikan_patin.webp" alt="Gulai Tempoyak Ikan Patin">
+                        <p>Gulai Tempoyak Ikan Patin</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="food-item" onclick="showFoodInfo('nasi_kebuli')">
+                        <img src="kebuli.webp" alt="Nasi Kebuli">
+                        <p>Nasi Kebuli</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Info Section -->
+            <div id="foodInfo" class="info-section">
+                <h2 id="foodName"></h2>
+                <div id="foodContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showFoodInfo(food) {
+            var foodName = document.getElementById('foodName');
+            var foodContent = document.getElementById('foodContent');
+            var foodInfoSection = document.getElementById('foodInfo');
+
+            var foodData = {
+                puding_diraja: {
+                    name: '- Puding DiRaja -',
+                    content: `
+                        <div class="puding-diraja">
+                            <img src="puding_diraja1.jpg" alt="Puding DiRaja">
+                            <div>
+                                <p>Puding DiRaja is a royal dessert originating from Pahang. It's made from a mixture of bananas, prunes, cherries, and cashews, served with a rich custard sauce.</p>
+                                <p><strong>Location: Puding Raja Suehanis NO1 Pekan</strong></p>
+                                <p>Address: No.1, Suehanis (Pekan Prime), Serambi Pekan, 26600 Pekan, Pahang</p>
+                                <p>Contact No: 014-8114373</p>
+                                <img src="puding_diraja2.jpg" alt="Puding DiRaja 2">
+                            </div>
+                        </div>
+                    `
+                },
+                gulai_tempoyak: {
+                    name: '- Gulai Tempoyak Ikan Patin -',
+                    content: `
+                        <div class="gulai-tempoyak">
+                            <img src="ikan_patin1.jpg" alt="Gulai Tempoyak Ikan Patin">
+                            <div>
+                                <p>Gulai Tempoyak Ikan Patin is a signature Pahang dish featuring catfish cooked
+                                <p>in a rich and spicy tempoyak (fermented durian) sauce. It's a unique blend of flavors that is both savory and tangy, making it a must-try dish in Pahang.</p>
+                                <p><strong>Location: Selera Patin Bangau Temerloh</strong></p>
+                                <p>Address: Jln Kampung Baru, Kampung Bangau, 28000 Temerloh, Pahang</p>
+                                <p>Contact No:  013-996 4100</p>
+                                <img src="ikan_patin2.jpg" alt="Gulai Tempoyak Ikan Patin 2">
+                            </div>
+                        </div>
+                    `
+                },
+                nasi_kebuli: {
+                    name: '- Nasi Kebuli -',
+                    content: `
+                        <div class="nasi-kebuli">
+                            <img src="kebuli_1.jpg" alt="Nasi Kebuli">
+                            <div>
+                                <p>Nasi Kebuli is a traditional Pahang rice dish influenced by Arab and Malay cuisines. It’s cooked with a mix of spices, served with lamb or chicken, and garnished with raisins and fried onions.</p>
+                                <p><strong>Location: Restoran Ratu Rasa</strong></p>
+                                <p>Address: 8, Bangunan UMNO, Jalan Dato' Abdullah, 27600, Raub, Pahang, 27600</p>
+                                <p>Contact No:  019-649 4691</p>
+                            </div>
+                            <img src="kebuli_2.jpg" alt="Nasi Kebuli 2">
+                        </div>
+                    `
+                }
+            };
+
+        
+            foodName.innerHTML = foodData[food].name;
+            foodContent.innerHTML = foodData[food].content;
+            foodInfoSection.style.display = 'block';
+
+            
+            foodInfoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

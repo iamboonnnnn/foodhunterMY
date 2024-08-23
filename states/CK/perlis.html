@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Food: Perlis</title>
+    <link rel="icon" type="image/icon" href="/assets/images/icon.png">
+
+    <!-- Custom CSS and JS -->
+    <link rel="stylesheet" href="/assets/css/header-footer.css">
+    <script src="/assets/js/header-footer.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/stateCK.css">
+    <script src="/assets/js/stateCK.js" defer></script>
+
+    <!-- Bootstrap CSS for modal -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+        <p>This website uses cookies to enhance your experience</p>
+        <p>By continuing to visit this site, you agree to our use of cookies.</p>
+        <button id="acceptCookies">Got it!</button>
+    </div>
+
+    <header>
+        <br>
+        <nav id="navbar" class="navbar">
+            <div class="nav-item">
+                <img src="/assets/images/logo.png" alt="Logo" class="logo">
+                <button class="menu-text" id="menu-text">
+                    MENU
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="/index.html#">HOME</a></li>
+                    <li><a href="/index.html#states">MALAYSIA STATES</a></li>
+                    <li><a href="/index.html#team">ABOUT US</a></li>
+                    <li><a href="/maps.html"><i class="fa-regular fa-map"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="main">
+        <section id="hero" class="hero">
+            <img id="heroImage" src="/assets/images/states/Perlis.jpg" alt="Perlis Hero Image">
+            <div class="hero-overlay">
+                <span class="hero-text">Perlis</span>
+            </div>
+        </section>
+
+        <section id="food-section">
+            <h2>Discover Perlis's Delicacies</h2>
+            <div class="food-buttons">
+                <img src="/assets/images/states-food/perlis/mango.jpg" alt="mango" class="food-image" title="mango"
+                    data-title="Harumanis Mango" data-id="food1Clicked"
+                    data-description="Highly prized variety of mango from Perlis, Malaysia. Known for its exceptionally sweet and fragrant flavor, this mango has a smooth, non-fibrous texture that melts in the mouth. Its distinct aroma and rich taste make it a favorite during the mango season, celebrated for its premium quality and deliciousness."
+                    data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63426.11362298474!2d100.17132875192598!3d6.504957032667942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304c9827b8a632d7%3A0xe6b3271eb96efe3c!2sPerusahaan%20Abdullah%20Sekeluarga%2C%20Pusat%20pengumpulan%20dan%20jualan%20Mempelam%20Harumanis!5e0!3m2!1szh-CN!2smy!4v1724063025865!5m2!1szh-CN!2smy">
+                <img src="/assets/images/states-food/perlis/pulut-mempelam.jpg" alt="pulut-mempelam" class="food-image"
+                    title="pulut-mempelam" data-title="Pulut Mempelam" data-id="food2Clicked"
+                    data-description="A Malaysian dessert made with glutinous rice (pulut) topped with sweet and ripe mempelam (mango). The sticky rice is often cooked with coconut milk and sugar, creating a rich and creamy base that pairs perfectly with the juicy, fragrant mango. This combination offers a delightful balance of flavors and textures, making it a beloved treat, especially during mango season."
+                    data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253750.1736067679!2d100.02214807812499!3d6.4137684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ca2b065ad2707%3A0xd85acfee2cfeec0d!2sWarung%20Bang%20Teh!5e0!3m2!1szh-CN!2smy!4v1724063893632!5m2!1szh-CN!2smy">
+                <img src="/assets/images/states-food/perlis/ikan-bakar.jpg" alt="Ikan Bakar" class="food-image" title="Ikan Bakar"
+                    data-title="Ikan Bakar" data-id="food3Clicked"
+                    data-description="A Malaysian grilled fish dish, known for its smoky flavor and spicy marinade. The fish, typically whole, is marinated with a blend of spices and herbs, then grilled to perfection over an open flame or charcoal. Often served with a tangy sambal and fresh herbs, Ikan Bakar is a flavorful and aromatic dish that showcases Malaysia's love for grilled seafood."
+                    data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63438.202898597214!2d100.06514694863277!3d6.40846740000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304c9b96b160358d%3A0xe68f219f243ee5eb!2sRestoran%20Api%20Api%20Ikan%20Bakar%20(RA0032309-P)!5e0!3m2!1szh-CN!2smy!4v1724064231864!5m2!1szh-CN!2smy">
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="foodModal" tabindex="-1" role="dialog" aria-labelledby="foodModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog custom-modal-width" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="foodModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="foodModalImage" src="" alt="Food Image" style="width: 100%; height: auto;">
+                    <p id="foodModalDescription"></p>
+                    <!-- Embedded Map -->
+                    <div id="embedMapContainer" style="margin-top: 20px; width: 100%;">
+                        <!-- Google Map Embed will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="design-rating" class="rating-section">
+        <h3>Rate Website Design</h3>
+        <div class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p id="rating-message"></p>
+    </div>
+    <!-- Subscribe to Mailing List Section -->
+    <div class="subscribe-section">
+        <h3>Subscribe to our Mailing List!</h3>
+        <form id="subscribeForm">
+            <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-column">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="/index.html#">Main Page</a></li>
+                <li><a href="/index.html#states">Malaysia States</a></li>
+                <li><a href="/index.html#team">About Us</a></li>
+                <li><a href="/maps.html">Interaction maps</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Our Partner</h3>
+            <ul>
+                <li><a href="https://www.malaysia.travel/">Malaysia Travel</a></li>
+                <li><a href="https://www.tourism.gov.my/">Tourism Malaysia</a></li>
+                <li><a href="https://www.cuticuti-malaysia.com/">Cuti-Cuti Malaysia</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p><b>&copy; 2024 Explore Food in Malaysia. All Rights Reserved.</b></p>
+    </div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+</body>
+
+</html>
